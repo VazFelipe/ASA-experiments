@@ -12,6 +12,10 @@
 					"name": "CustomerDataset"
 				},
 				{
+					"dataset": {
+						"referenceName": "SqlServerTable1",
+						"type": "DatasetReference"
+					},
 					"name": "DimCustomer"
 				}
 			],
@@ -34,7 +38,9 @@
 				"     validateSchema: false,",
 				"     ignoreNoFilesFound: false) ~> CustomerDataset",
 				"source(allowSchemaDrift: true,",
-				"     validateSchema: false) ~> DimCustomer"
+				"     validateSchema: false,",
+				"     isolationLevel: 'READ_UNCOMMITTED',",
+				"     format: 'table') ~> DimCustomer"
 			]
 		}
 	}
