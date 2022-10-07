@@ -10,6 +10,9 @@
 						"type": "DatasetReference"
 					},
 					"name": "CustomerDataset"
+				},
+				{
+					"name": "DimCustomer"
 				}
 			],
 			"sinks": [],
@@ -29,7 +32,9 @@
 				"     ),",
 				"     allowSchemaDrift: true,",
 				"     validateSchema: false,",
-				"     ignoreNoFilesFound: false) ~> CustomerDataset"
+				"     ignoreNoFilesFound: false) ~> CustomerDataset",
+				"source(allowSchemaDrift: true,",
+				"     validateSchema: false) ~> DimCustomer"
 			]
 		}
 	}
