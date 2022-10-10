@@ -1,0 +1,15 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"workspaceName": {
+			"value": "workspace-free-account-200-dollars"
+		},
+		"workspace-free-account-200-dollars-WorkspaceDefaultSqlServer_connectionString": {
+			"value": ""
+		},
+		"workspace-free-account-200-dollars-WorkspaceDefaultStorage_properties_typeProperties_url": {
+			"value": "https://storageaccountmovies.dfs.core.windows.net"
+		}
+	}
+}
