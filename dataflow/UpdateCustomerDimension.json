@@ -99,7 +99,7 @@
 				"          ModifiedDate = currentTimestamp()) ~> SetDates",
 				"SetDates alterRow(upsertIf(true())) ~> AllowUpserts",
 				"AllowUpserts sink(allowSchemaDrift: true,",
-				"     validateSchema: true,",
+				"     validateSchema: false,",
 				"     input(",
 				"          CustomerID as integer,",
 				"          Title as string,",
