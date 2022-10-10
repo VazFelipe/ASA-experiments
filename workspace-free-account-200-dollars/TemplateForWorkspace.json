@@ -73,8 +73,7 @@
 			},
 			"dependsOn": [
 				"[concat(variables('workspaceId'), '/dataflows/UpdateCustomerDimension')]",
-				"[concat(variables('workspaceId'), '/linkedServices/workspace-free-account-200-dollars-WorkspaceDefaultStorage')]",
-				"[concat(variables('workspaceId'), '/integrationRuntimes/AutoResolveIntegrationRuntime')]"
+				"[concat(variables('workspaceId'), '/linkedServices/workspace-free-account-200-dollars-WorkspaceDefaultStorage')]"
 			]
 		},
 		{
