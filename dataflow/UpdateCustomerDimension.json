@@ -25,7 +25,11 @@
 						"referenceName": "DimCustomer",
 						"type": "DatasetReference"
 					},
-					"name": "Sink"
+					"name": "Sink",
+					"rejectedDataLinkedService": {
+						"referenceName": "workspace-free-account-200-dollars-WorkspaceDefaultStorage",
+						"type": "LinkedServiceReference"
+					}
 				}
 			],
 			"transformations": [
