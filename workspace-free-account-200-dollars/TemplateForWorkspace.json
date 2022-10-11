@@ -389,7 +389,7 @@
 						"     multiple: false,",
 						"     pickup: 'any',",
 						"     broadcast: 'auto')~> LookupCustomerID",
-						"LookupCustomerID derive(InsertDate = iif(isNull(InsertedDate), currentTimestamp(), InsertedDate),",
+						"LookupCustomerID derive(InsertedDate = iif(isNull(InsertedDate), currentTimestamp(), InsertedDate),",
 						"          ModifiedDate = currentTimestamp()) ~> SetDates",
 						"SetDates alterRow(upsertIf(true())) ~> AllowUpserts",
 						"AllowUpserts sink(allowSchemaDrift: true,",
@@ -519,7 +519,7 @@
 			"apiVersion": "2019-06-01-preview",
 			"properties": {
 				"content": {
-					"query": "SELECT TOP (100) [CustomerID]\n,[Title]\n,[FirstName]\n,[MiddleName]\n,[LastName]\n,[Suffix]\n,[CompanyName]\n,[SalesPerson]\n,[EmailAddress]\n,[Phone]\n,[InsertedDate]\n,[ModifiedDate]\n,[HashKey]\n FROM [dbo].[DimCustomer]",
+					"query": "SELECT TOP (100) [CustomerID]\n,[Title]\n,[FirstName]\n,[MiddleName]\n,[LastName]\n,[Suffix]\n,[CompanyName]\n,[SalesPerson]\n,[EmailAddress]\n,[Phone]\n,[InsertedDate]\n,[ModifiedDate]\n,[HashKey]\n FROM [dbo].[DimCustomer];\n\nTRUNCATE TABLE [dbo].[DimCustomer]\n\n\nALTER TABLE [dbo].[DimCustomer] ALTER COLUMN [CustomerID] INT NOT NULL;\nALTER TABLE [dbo].[DimCustomer] ALTER COLUMN [Title] NVARCHAR(8) NULL;\nALTER TABLE [dbo].[DimCustomer] ALTER COLUMN [FirstName] NVARCHAR(50) NOT NULL;\nALTER TABLE [dbo].[DimCustomer] ALTER COLUMN [MiddleName] NVARCHAR(50) NULL;\nALTER TABLE [dbo].[DimCustomer] ALTER COLUMN [LastName] NVARCHAR(50) NOT NULL;\nALTER TABLE [dbo].[DimCustomer] ALTER COLUMN [Suffix] NVARCHAR(10) NULL;\nALTER TABLE [dbo].[DimCustomer] ALTER COLUMN [CompanyName] NVARCHAR(128) NULL;\nALTER TABLE [dbo].[DimCustomer] ALTER COLUMN [SalesPerson] NVARCHAR(256) NULL;\nALTER TABLE [dbo].[DimCustomer] ALTER COLUMN [EmailAddress] NVARCHAR(50) NULL;\nALTER TABLE [dbo].[DimCustomer] ALTER COLUMN [Phone] NVARCHAR(25) NULL;\nALTER TABLE [dbo].[DimCustomer] ALTER COLUMN [InsertedDate] DATETIME NOT NULL;\nALTER TABLE [dbo].[DimCustomer] ALTER COLUMN [ModifiedDate] DATETIME NOT NULL;\nALTER TABLE [dbo].[DimCustomer] ALTER COLUMN [HashKey] CHAR(66) NULL;\n\n\n\n\n",
 					"metadata": {
 						"language": "sql"
 					},
