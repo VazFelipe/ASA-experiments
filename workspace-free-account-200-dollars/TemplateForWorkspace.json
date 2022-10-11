@@ -315,7 +315,11 @@
 								"referenceName": "DimCustomer",
 								"type": "DatasetReference"
 							},
-							"name": "Sink"
+							"name": "Sink",
+							"rejectedDataLinkedService": {
+								"referenceName": "workspace-free-account-200-dollars-WorkspaceDefaultStorage",
+								"type": "LinkedServiceReference"
+							}
 						}
 					],
 					"transformations": [
@@ -435,7 +439,8 @@
 			},
 			"dependsOn": [
 				"[concat(variables('workspaceId'), '/datasets/CustomerSource')]",
-				"[concat(variables('workspaceId'), '/datasets/DimCustomer')]"
+				"[concat(variables('workspaceId'), '/datasets/DimCustomer')]",
+				"[concat(variables('workspaceId'), '/linkedServices/workspace-free-account-200-dollars-WorkspaceDefaultStorage')]"
 			]
 		},
 		{
