@@ -1,5 +1,5 @@
 {
-	"name": "Pipeline 1",
+	"name": "Update Customer Dimension SCD Type 1",
 	"properties": {
 		"activities": [
 			{
